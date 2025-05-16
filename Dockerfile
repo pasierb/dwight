@@ -15,4 +15,4 @@ RUN uv sync
 EXPOSE 8080
 
 # Run the web service
-CMD ["adk", "api_service"]
+CMD ["uv", "run", "adk", "api_server"]
