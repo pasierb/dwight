@@ -9,7 +9,9 @@ Dwigt is an AI-powered personal assistant with the unique personality of Dwight 
 - 💬 Natural conversation capabilities
 - 🎭 Character-consistent responses and humor
 
-## Getting Started
+## ToDo
+
+- [ ] Make time relative queries work, for example "Check court availability for **today**"
 
 ## Acknowledgments
 
