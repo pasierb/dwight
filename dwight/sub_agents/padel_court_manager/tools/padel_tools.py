@@ -69,10 +69,11 @@ def __fetch_availability(date: date) -> List[Resource]:
 
 
 def get_padel_court_availability(
-    date_as_string: str, tool_context: ToolContext
+    date_to_check: str, tool_context: ToolContext
 ) -> Dict[str, Any]:
     """
     Get the availability of padel courts for a given date.
+    Date is often stored in state as "temp:date_to_check" key.
 
     Args:
         date_as_string (str): The date to check availability for in YYYY-MM-DD format
@@ -84,7 +85,7 @@ def get_padel_court_availability(
             - error_message: str - Optional error message if status is "error"
     """
     try:
-        date_value = date.fromisoformat(date_as_string)
+        date_value = date.fromisoformat(date_to_check)
     except ValueError:
         return {
             "status": "error",
@@ -95,6 +96,7 @@ def get_padel_court_availability(
     try:
         availability = __fetch_availability(date_value)
         data = [resource.to_dict() for resource in availability]
+        tool_context.state["temp:padel_court_availability"] = data
 
         return {
             "status": "success",
