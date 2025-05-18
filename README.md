@@ -11,7 +11,7 @@ Dwigt is an AI-powered personal assistant with the unique personality of Dwight 
 
 ## ToDo
 
-- [ ] Make time relative queries work, for example "Check court availability for **today**"
+- [x] Make time relative queries work, for example "Check court availability for **today**"
 
 ## Acknowledgments
 
